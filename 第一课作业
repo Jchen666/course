@@ -1,11 +1,19 @@
 pragma solidity ^0.4.14;
 
 contract Payroll {
-    uint salary = 1 ether;
-    address frank = 0xca35b7d915458ef540ade6068dfe2f44e8fa733c;
+    uint salary;
+    address frank;
     uint constant payDuration = 10 seconds;
     uint lastPayday = now;
     
+    function setSalary (unit S){
+        salary = S;
+    }
+    
+    function setAddress (address A){
+        frank = A;
+    }
+   
     function addFund() payable returns (uint)  {
         return this.balance;    
     }
